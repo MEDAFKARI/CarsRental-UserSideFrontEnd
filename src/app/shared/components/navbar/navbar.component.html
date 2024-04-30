@@ -1,0 +1,17 @@
+<div class="relative flex flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0">
+    <div>
+        <img class="h-8" src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/logos/logo-nav-0.png">
+    </div>
+    <div class="items-center justify-between hidden gap-12 text-black md:flex">
+        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Product</a>
+        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Features</a>
+        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Pricing</a>
+        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Company</a>
+    </div>
+    <div class="items-center hidden gap-8 md:flex">
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active"   class="flex items-center text-sm font-normal text-black">Log In</a>
+        <a  [routerLink]="['/register']" routerLinkActive="router-link-active"  class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</a>
+    
+    </div>
+   
+</div>
