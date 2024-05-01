@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
   public navLinks=[
-    {path:'cars' , name:'Cars'},
-    {path:'stores' , name:'Stores'}
+    {path:'home', name:'Home'},
+    {path:'stores' , name:'Stores'},
+    {path:'cars' , name:'Cars'}
   ]
 
 }

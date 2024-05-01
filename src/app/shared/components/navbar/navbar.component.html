@@ -3,10 +3,7 @@
         <img class="h-8" src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/logos/logo-nav-0.png">
     </div>
     <div class="items-center justify-between hidden gap-12 text-black md:flex">
-        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Product</a>
-        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Features</a>
-        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Pricing</a>
-        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Company</a>
+        <a *ngFor="let navItem of navLinks" [routerLink]="navItem.path" routerLinkActive="router-link-active"  class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" >{{navItem.name}}</a>
     </div>
     <div class="items-center hidden gap-8 md:flex">
         <a [routerLink]="['/login']" routerLinkActive="router-link-active"   class="flex items-center text-sm font-normal text-black">Log In</a>

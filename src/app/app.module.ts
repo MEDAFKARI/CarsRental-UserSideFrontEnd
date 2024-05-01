@@ -11,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './modules/home/layout/layout.component';
 import { CarsSectionComponent } from './modules/home/cars-section/cars-section.component';
+import { HomeCarsSecComponent } from './modules/home/home-cars-sec/home-cars-sec.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CarsSectionComponent } from './modules/home/cars-section/cars-section.c
     NavbarComponent,
     AccueilComponent,
     LayoutComponent,
-    CarsSectionComponent
+    CarsSectionComponent,
+    HomeCarsSecComponent
   ],
   imports: [
     BrowserModule,
