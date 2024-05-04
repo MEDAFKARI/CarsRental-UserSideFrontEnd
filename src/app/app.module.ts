@@ -12,6 +12,11 @@ import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './modules/home/layout/layout.component';
 import { CarsSectionComponent } from './modules/home/cars-section/cars-section.component';
 import { HomeCarsSecComponent } from './modules/home/home-cars-sec/home-cars-sec.component';
+import { StoreSectionComponent } from './modules/home/store-section/store-section.component';
+import { CarOverviewComponent } from './modules/home/car-overview/car-overview.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreOverviewComponent } from './modules/home/store-overview/store-overview.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +27,18 @@ import { HomeCarsSecComponent } from './modules/home/home-cars-sec/home-cars-sec
     AccueilComponent,
     LayoutComponent,
     CarsSectionComponent,
-    HomeCarsSecComponent
+    HomeCarsSecComponent,
+    StoreSectionComponent,
+    CarOverviewComponent,
+    FooterComponent,
+    StoreOverviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterOutlet,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

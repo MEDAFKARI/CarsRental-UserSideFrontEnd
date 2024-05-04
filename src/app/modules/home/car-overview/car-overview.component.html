@@ -1,0 +1,215 @@
+                                    
+<section class="relative p-20">
+    <div class="w-full mx-auto px-4 sm:px-6 lg:px-0">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
+            <div class="img">
+                <div class="img-box h-full max-lg:mx-auto ">
+                    <img src="https://content.avito.ma/classifieds/images/10118808687?t=full_hd" 
+                        class="max-lg:mx-auto lg:ml-auto object-cover">
+                </div>
+            </div>
+            <div
+                class="data w-full lg:pr-8 pr-0 xl:justify-start justify-center flex items-center max-lg:pb-10 xl:my-2 lg:my-5 my-0">
+                <div class="data w-full max-w-xl">
+                    <a [routerLink]="'/cars'" class="text-lg font-medium leading-8 text-indigo-600 mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.06147 18.1227L3.00012 12.0613L9.06147 6" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="my-path"></path>
+                        <path d="M21 12.0615H3" stroke="black" stroke-width="1.6" stroke-linecap="round" class="my-path"></path>
+                        </svg>
+                    </a>
+                    <h2 class="font-manrope font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">{{car.carModel}}</h2>
+                    <div class="flex flex-col sm:flex-row sm:items-center mb-6">
+                        <h6
+                            class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">
+                            {{car.price}}MAD</h6>
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-1">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_12029_1640)">
+                                        <path
+                                            d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
+                                            fill="#FBBF24" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_12029_1640">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_12029_1640)">
+                                        <path
+                                            d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
+                                            fill="#FBBF24" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_12029_1640">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_12029_1640)">
+                                        <path
+                                            d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
+                                            fill="#FBBF24" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_12029_1640">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_12029_1640)">
+                                        <path
+                                            d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
+                                            fill="#FBBF24" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_12029_1640">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_8480_66029)">
+                                        <path
+                                            d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
+                                            fill="#F3F4F6" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_8480_66029">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                            </div>
+                            <span class="pl-2 font-normal leading-7 text-gray-500 text-sm ">1624 review</span>
+                        </div>
+
+                    </div>
+                    <p class="text-gray-500 text-base font-normal mb-5">
+                        {{car.brand.brandName}}
+                         <a href="#"
+                            class="text-indigo-600">See More About this Store ....</a>
+                    </p>
+                    <ul class="grid gap-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 8L5.72187 10.2682C5.90158 10.418 6.12811 10.5 6.36205 10.5H17.6379C17.8719 10.5 18.0984 10.418 18.2781 10.2682L21 8M6.5 14H6.51M17.5 14H17.51M8.16065 4.5H15.8394C16.5571 4.5 17.2198 4.88457 17.5758 5.50772L20.473 10.5777C20.8183 11.1821 21 11.8661 21 12.5623V18.5C21 19.0523 20.5523 19.5 20 19.5H19C18.4477 19.5 18 19.0523 18 18.5V17.5H6V18.5C6 19.0523 5.55228 19.5 5 19.5H4C3.44772 19.5 3 19.0523 3 18.5V12.5623C3 11.8661 3.18166 11.1821 3.52703 10.5777L6.42416 5.50772C6.78024 4.88457 7.44293 4.5 8.16065 4.5ZM7 14C7 14.2761 6.77614 14.5 6.5 14.5C6.22386 14.5 6 14.2761 6 14C6 13.7239 6.22386 13.5 6.5 13.5C6.77614 13.5 7 13.7239 7 14ZM18 14C18 14.2761 17.7761 14.5 17.5 14.5C17.2239 14.5 17 14.2761 17 14C17 13.7239 17.2239 13.5 17.5 13.5C17.7761 13.5 18 13.7239 18 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            <span class="font-normal text-base text-gray-900 ">Body : {{car.body}}</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" id="car-door-left-1" 
+                            data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" class="icon line">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier"><path id="primary" d="M12.29,3.29,20,11v4.13a1,1,0,0,1-.86,1l-2.06.3A6.11,6.11,0,0,0,12,21H5a1,1,0,0,1-1-1V4A1,1,0,0,1,5,3h6.59A1,1,0,0,1,12.29,3.29ZM20,11H4m4,4h2" 
+                                style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;"></path></g></svg>
+                            
+                            <span class="font-normal text-base text-gray-900 ">Doors : {{car.doors}}</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4C6 4.83934 5.48296 5.55793 4.75 5.85462V11.25H11.25V5.85462C10.517 5.55793 10 4.83934 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4C14 4.83934 13.483 5.55793 12.75 5.85462V11.25H16C16.964 11.25 17.6116 11.2484 18.0946 11.1835C18.5561 11.1214 18.7536 11.0142 18.8839 10.8839C19.0142 10.7536 19.1214 10.5561 19.1835 10.0946C19.2484 9.61157 19.25 8.96401 19.25 8V5.85462C18.517 5.55793 18 4.83934 18 4C18 2.89543 18.8954 2 20 2C21.1046 2 22 2.89543 22 4C22 4.83934 21.483 5.55793 20.75 5.85462V8.05199C20.75 8.95048 20.7501 9.6997 20.6701 10.2945C20.5857 10.9223 20.4 11.4891 19.9445 11.9445C19.4891 12.4 18.9223 12.5857 18.2945 12.6701C17.6997 12.7501 16.9505 12.75 16.052 12.75L12.75 12.75L12.75 18.1454C13.483 18.4421 14 19.1607 14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 19.1607 10.517 18.4421 11.25 18.1454V12.75H4.75V18.1454C5.48296 18.4421 6 19.1607 6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 19.1607 2.51704 18.4421 3.25 18.1454V5.85462C2.51704 5.55793 2 4.83934 2 4Z" fill="#000000"></path> 
+                                <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M17.25 15C17.25 14.5858 17.5858 14.25 18 14.25H20.2857C21.6612 14.25 22.75 15.3839 22.75 16.75C22.75 17.8285 22.0713 18.7624 21.1086 19.1077L22.6396 21.6084C22.8559 21.9616 22.7449 22.4234 22.3916 22.6396C22.0384 22.8559 21.5766 22.7449 21.3604 22.3916L19.4369 19.25H18.75V22C18.75 22.4142 18.4142 22.75 18 22.75C17.5858 22.75 17.25 22.4142 17.25 22V15ZM18.75 17.75H20.2857C20.8038 17.75 21.25 17.3169 21.25 16.75C21.25 16.1831 20.8038 15.75 20.2857 15.75H18.75V17.75Z" fill="#000000"></path> </g></svg>
+                          
+                            <span class="font-normal text-base text-gray-900 ">Transmission : {{car.transmission}}</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 21H4M15 21H16M15 21V7C15 5.11438 15 4.17157 14.4142 3.58579C13.8284 3 12.8856 3 11 3H8C6.11438 3 5.17157 3 4.58579 3.58579C4 4.17157 4 5.11438 4 7V21M4 21H3M15 13H16C16.9428 13 17.4142 13 17.7071 13.2929C18 13.5858 18 14.0572 18 15V15.5C18 15.9659 18 16.1989 18.0761 16.3827C18.1776 16.6277 18.3723 16.8224 18.6173 16.9239C18.8011 17 19.0341 17 19.5 17C19.9659 17 20.1989 17 20.3827 16.9239C20.6277 16.8224 20.8224 16.6277 20.9239 16.3827C21 16.1989 21 15.9659 21 15.5V10.8284C21 10.4197 21 10.2153 20.9239 10.0315C20.8478 9.84776 20.7032 9.70324 20.4142 9.41421L18 7M9 12H10C10.9428 12 11.4142 12 11.7071 11.7071C12 11.4142 12 10.9428 12 10V9C12 8.05719 12 7.58579 11.7071 7.29289C11.4142 7 10.9428 7 10 7H9C8.05719 7 7.58579 7 7.29289 7.29289C7 7.58579 7 8.05719 7 9V10C7 10.9428 7 11.4142 7.29289 11.7071C7.58579 12 8.05719 12 9 12Z" stroke="black" stroke-width="1.6" stroke-linecap="round" class="my-path"></path>
+                                </svg>
+                            <span class="font-normal text-base text-gray-900 ">Fuel : {{car.fuel}}</span>
+                        </li>
+                        
+                    </ul>
+
+                    <div class="bg-white max-w-2xl shadow overflow-hidden sm:rounded-lg">
+                        <div class="px-4 py-5 sm:px-6">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Store Information
+                            </h3>
+                            <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                                Details and informations about Store.
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-200">
+                            <dl>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 9V17C19 18.8856 19 19.8284 18.4142 20.4142C17.8284 21 16.8856 21 15 21H9C7.11438 21 6.17157 21 5.58579 20.4142C5 19.8284 5 18.8856 5 17V9" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                            <path d="M4.38556 5.15106C4.57662 4.48237 4.67214 4.14802 4.8473 3.88664C5.09766 3.51302 5.46665 3.2347 5.89467 3.09661C6.19411 3 6.54183 3 7.23728 3H9.00015V6.63958C9.00015 6.99391 9.00015 7.17108 8.9753 7.32724C8.86539 8.01793 8.40268 8.60103 7.75504 8.86501C7.60861 8.92469 7.43607 8.96495 7.09101 9.04547C6.4121 9.20388 6.07264 9.28309 5.82697 9.27934C4.70798 9.26229 3.82074 8.33041 3.85859 7.21193C3.8669 6.96637 3.96266 6.63121 4.15418 5.96088L4.38556 5.15106Z" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                            <path d="M19.6146 5.15106C19.4235 4.48237 19.328 4.14802 19.1529 3.88664C18.9025 3.51302 18.5335 3.2347 18.1055 3.09661C17.806 3 17.4583 3 16.7629 3H15V6.63958C15 6.99391 15 7.17108 15.0249 7.32724C15.1348 8.01793 15.5975 8.60103 16.2451 8.86501C16.3915 8.92469 16.5641 8.96495 16.9091 9.04547C17.5881 9.20388 17.9275 9.28309 18.1732 9.27934C19.2922 9.26229 20.1794 8.33041 20.1416 7.21193C20.1332 6.96637 20.0375 6.63121 19.846 5.96088L19.6146 5.15106Z" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                            <path d="M9 3H15V6C15 6.93188 15 7.39782 14.8478 7.76537C14.6448 8.25542 14.2554 8.64477 13.7654 8.84776C13.3978 9 12.9319 9 12 9C11.0681 9 10.6022 9 10.2346 8.84776C9.74458 8.64477 9.35523 8.25542 9.15224 7.76537C9 7.39782 9 6.93188 9 6V3Z" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                            <path d="M10 17C10 16.0572 10 15.5858 10.2929 15.2929C10.5858 15 11.0572 15 12 15C12.9428 15 13.4142 15 13.7071 15.2929C14 15.5858 14 16.0572 14 17V21H10V17Z" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                        </svg> 
+                                            
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        {{car.storeName}}
+                                    </dd>
+                                </div>
+                                
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.02427 10.2591L13.7368 17.9716C15.4072 19.642 18.1154 19.642 19.7858 17.9716C20.4539 17.3035 20.4539 16.2202 19.7858 15.552L17.6434 13.4096C17.1562 12.9224 16.3663 12.9224 15.8791 13.4096C15.3919 13.8968 14.602 13.8968 14.1148 13.4096L10.2334 9.52819C9.74619 9.041 9.74619 8.25109 10.2334 7.7639C10.7206 7.2767 10.7206 6.4868 10.2334 5.9996L8.44388 4.2101C7.77573 3.54195 6.69243 3.54194 6.02428 4.2101C4.35389 5.88049 4.35389 8.58872 6.02427 10.2591Z" stroke="black" stroke-width="1.6" class="my-path"></path>
+                                        </svg>
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        {{car.storeNumber}}
+                                    </dd>
+                                </div>
+
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                    </dt>
+                                    <dd class=" text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        <a class="flex items-center" (click)="HandleStorePage(car.storeId)">
+                                            <span>
+                                                View More
+                                            </span>
+                                            <svg class="w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" class="w-6 h-6 ml-2">
+                                                <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                            </svg>
+                                        </a>
+                                    </dd>
+                                </div>
+                            </dl>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="flex items-center my-5 gap-3">
+                        <button
+                            class="group transition-all duration-500 p-4 rounded-full bg-indigo-50 hover:bg-indigo-100 hover:shadow-sm hover:shadow-indigo-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                                fill="none">
+                                <path
+                                    d="M4.47084 14.3196L13.0281 22.7501L21.9599 13.9506M13.0034 5.07888C15.4786 2.64037 19.5008 2.64037 21.976 5.07888C24.4511 7.5254 24.4511 11.4799 21.9841 13.9265M12.9956 5.07888C10.5204 2.64037 6.49824 2.64037 4.02307 5.07888C1.54789 7.51738 1.54789 11.4799 4.02307 13.9184M4.02307 13.9184L4.04407 13.939M4.02307 13.9184L4.46274 14.3115"
+                                    stroke="#4F46E5" stroke-width="1.6" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </button>
+                        <button
+                            class="text-center w-full px-5 py-4 rounded-[100px] bg-indigo-600 flex items-center justify-center font-semibold text-lg text-white shadow-sm transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-400">
+                            Rent Car
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                                        
