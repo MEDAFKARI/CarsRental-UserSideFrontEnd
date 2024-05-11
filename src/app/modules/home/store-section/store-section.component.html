@@ -1,1 +1,120 @@
-<p>store-section works!</p>
+
+<section class="py-10 relative">
+    <div class="w-full max-w-7xl mx-auto px-4 md:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-center max-lg:gap-4 justify-between w-full">
+            
+            <ul class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-12">
+                <li class="flex items-center cursor-pointer outline-none group">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="stroke-indigo-600 transition-all duration-500 group-hover:stroke-indigo-600"
+                            d="M19.7778 9.33333V9.33333C19.7778 8.09337 19.7778 7.47339 19.6415 6.96472C19.2716 5.58436 18.1934 4.50616 16.8131 4.1363C16.3044 4 15.6844 4 14.4444 4C12.963 4 11.4815 4 10 4C6.22876 4 4.34315 4 3.17157 5.17157C2 6.34315 2 8.22876 2 12V12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20C11.3333 20 12.6667 20 14 20C15.6554 20 16.4831 20 17.1459 19.7588C18.2569 19.3544 19.1322 18.4791 19.5365 17.3681C19.7778 16.7053 19.7778 15.8776 19.7778 14.2222V14.2222M16.6667 14.2222H20.2222C21.2041 14.2222 22 13.4263 22 12.4444V11.1111C22 10.1293 21.2041 9.33333 20.2222 9.33333H16.6667C15.6848 9.33333 14.8889 10.1293 14.8889 11.1111V12.4444C14.8889 13.4263 15.6848 14.2222 16.6667 14.2222Z"
+                            stroke="#4F46E5" stroke-width="1.5" />
+                    </svg>
+                    <span
+                        class="font-normal text-lg leading-8 text-indigo-600 ml-2 mr-3 transition-all duration-500 group-hover:text-indigo-600">Stores</span>
+                    <button
+                        class="flex aspect-square h-6 rounded-full border border-indigo-600  items-center justify-center font-manrope font-medium text-base text-indigo-600  transition-all duration-500 group-hover:border-indigo-600 group-hover:text-indigo-600"></button>
+
+                </li>
+            </ul>
+           
+            <div class="relative w-full max-w-sm">
+                <div class="relative w-full m-5 max-w-xl mx-auto bg-white rounded-full">
+                    <input   placeholder="e.g. Store name" class="rounded-full w-full h-16 bg-transparent py-2 pl-8 pr-32 outline-none border-2 border-gray-100 shadow-md hover:outline-none focus:ring-indigo-600 focus:border-indigo-600" type="text" name="query" id="query">
+                    <button 
+                        (click)="handleSearch()" type="submit" class="absolute inline-flex items-center h-10 px-4 py-2 text-sm text-white transition duration-150 ease-in-out rounded-full outline-none right-3 top-3 bg-indigo-600 sm:px-6 sm:text-base sm:font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-800">
+                      <svg class="-ml-0.5 sm:-ml-1 mr-2 w-4 h-4 sm:h-5 sm:w-5 indigo-600 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                      </svg>
+                      Search
+                    </button>
+                  </div>
+            </div>
+        </div>
+        <svg class="my-7 w-full" xmlns="http://www.w3.org/2000/svg" width="1216" height="2" viewBox="0 0 1216 2"
+            fill="none">
+            <path d="M0 1H1216" stroke="#E5E7EB" />
+        </svg>
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-3 w-full max-md:max-w-md max-md:mx-auto">
+
+                <div class="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+                    <div class="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-7">
+                        <p class="font-medium text-base leading-7 text-black ">Filter Plans</p>
+                        <p
+                            (click)="HandleReset()"
+                            class="font-medium text-xs text-gray-500 cursor-pointer transition-all duration-500 hover:text-indigo-600">
+                            RESET</p>
+                    </div>
+
+                    <p class="font-medium m-5 text-sm leading-6 text-black">City</p>
+                    <div class="box m-3 flex flex-col gap-2">
+                        <div *ngFor="let city of cities" class="flex items-center">
+                            <input (click)="HandleCityFilter(city.id)" name="color" type="radio"
+                            class="before:content[''] peer  appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]"
+                            id="gray" />
+                          <span
+                            class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            
+                          </span>
+                            <label for="checkbox-default-1"  class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">{{city.cityName}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-9">
+                <section class="py-10 h-full">
+                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <a  *ngFor="let store of stores" (click)="HandleGetStore(store.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
+                                <div class="">
+                                    <img src="https://content.avito.ma/classifieds/images/10118808687?t=full_hd" alt="face cream image" class="w-full object-cover">
+                                </div>
+                                <div class="mt-5">
+                                    <div class="flex items-center justify-between">
+                                        <h6 class="font-semibold text-xl leading-8 text-black transition-all duration-500 group-hover:text-indigo-600">{{store.storeName}}</h6>
+                                        <div class="font-semibold text-xl leading-8 text-indigo-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 font-normal text-sm leading-6 text-gray-500">{{store.city.cityName}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <div class="flex justify-end">
+                    <nav class="relative z-0 inline-flex flex-wrap -space-x-px rounded-md shadow-md">
+                        <a href="#" class="relative inline-flex items-center rounded-l-md p-2 text-sm text-gray-500 hover:bg-gray-200">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- <div *ngFor="let page of [].constructor(this.appstate.CarsState.totalPages); 
+                        let i=index">
+                            <a  (click)="HandlePagination(i)" class="relative inline-flex items-center text-sm text-gray-500 p-2 md:px-3 md:py-2 hover:bg-gray-200">{{i+1}}</a>
+                        </div>
+                        <a href="" class="relative inline-flex items-center rounded-r-md p-2 text-sm text-gray-500 hover:bg-gray-200 ">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a> -->
+                    </nav>
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+                                        
+
+                                        

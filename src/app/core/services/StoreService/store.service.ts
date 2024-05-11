@@ -9,6 +9,7 @@ const API_URL = `${environment.API_URL}/stores`;
   providedIn: 'root'
 })
 export class StoreService {
+  
 
   constructor(private http:HttpClient) { }
 
@@ -18,6 +19,10 @@ export class StoreService {
 
   getStore(storeId:number):Observable<any>{
     return this.http.get(`${API_URL}/get/${storeId}`);
+  }
+
+  getByCity(cityId: number):Observable<any> {
+    return this.http.get(`${API_URL}/getByCity/${cityId}`);
   }
 
 
