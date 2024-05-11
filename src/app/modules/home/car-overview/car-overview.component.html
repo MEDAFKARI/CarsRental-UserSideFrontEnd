@@ -153,7 +153,7 @@
                                             
                                     </dt>
                                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {{car.storeName}}
+                                        {{car.store.storeName}}
                                     </dd>
                                 </div>
                                 
@@ -164,7 +164,7 @@
                                         </svg>
                                     </dt>
                                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {{car.storeNumber}}
+                                        {{car.store.storeNumber}}
                                     </dd>
                                 </div>
 
@@ -172,7 +172,7 @@
                                     <dt class="text-sm font-medium text-gray-500">
                                     </dt>
                                     <dd class=" text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        <a class="flex items-center" (click)="HandleStorePage(car.storeId)">
+                                        <a class="flex items-center" (click)="HandleStorePage(car.store.id)">
                                             <span>
                                                 View More
                                             </span>

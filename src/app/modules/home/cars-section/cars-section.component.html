@@ -2,6 +2,7 @@
 <section class="py-20 relative">
     <div class="w-full max-w-7xl mx-auto px-4 md:px-8">
         <div class="flex flex-col lg:flex-row lg:items-center max-lg:gap-4 justify-between w-full">
+            
             <ul class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-12">
                 <li class="flex items-center cursor-pointer outline-none group">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,28 +13,22 @@
                     <span
                         class="font-normal text-lg leading-8 text-indigo-600 ml-2 mr-3 transition-all duration-500 group-hover:text-indigo-600">Cars</span>
                     <button
-                        class="flex aspect-square h-6 rounded-full border border-indigo-600  items-center justify-center font-manrope font-medium text-base text-indigo-600  transition-all duration-500 group-hover:border-indigo-600 group-hover:text-indigo-600">{{this.cars.length}}</button>
+                        class="flex aspect-square h-6 rounded-full border border-indigo-600  items-center justify-center font-manrope font-medium text-base text-indigo-600  transition-all duration-500 group-hover:border-indigo-600 group-hover:text-indigo-600">{{this.appstate.CarsState.carsList.length}}</button>
 
                 </li>
-
-               
             </ul>
+           
             <div class="relative w-full max-w-sm">
-                <svg class="absolute top-1/2 -translate-y-1/2 left-4 z-50" width="20" height="20"
-                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.5555 3.33203H3.44463C2.46273 3.33203 1.66675 4.12802 1.66675 5.10991C1.66675 5.56785 1.84345 6.00813 2.16004 6.33901L6.83697 11.2271C6.97021 11.3664 7.03684 11.436 7.0974 11.5068C7.57207 12.062 7.85127 12.7576 7.89207 13.4869C7.89728 13.5799 7.89728 13.6763 7.89728 13.869V16.251C7.89728 17.6854 9.30176 18.6988 10.663 18.2466C11.5227 17.961 12.1029 17.157 12.1029 16.251V14.2772C12.1029 13.6825 12.1029 13.3852 12.1523 13.1015C12.2323 12.6415 12.4081 12.2035 12.6683 11.8158C12.8287 11.5767 13.0342 11.3619 13.4454 10.9322L17.8401 6.33901C18.1567 6.00813 18.3334 5.56785 18.3334 5.10991C18.3334 4.12802 17.5374 3.33203 16.5555 3.33203Z"
-                        stroke="black" stroke-width="1.6" stroke-linecap="round" />
-                </svg>
-                <select id="Offer"
-                    class="h-12 border border-gray-300 text-gray-900 pl-11 text-base font-normal leading-7 rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white transition-all duration-500 hover:border-gray-400 hover:bg-gray-50 focus-within:bg-gray-50">
-                    <option selected>Sort by price(high to low)</option>
-                </select>
-                <svg class="absolute top-1/2 -translate-y-1/2 right-4 z-50" width="16" height="16"
-                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.0002 5.99845L8.00008 9.99862L3.99756 5.99609" stroke="#111827" stroke-width="1.6"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                <div class="relative w-full m-5 max-w-xl mx-auto bg-white rounded-full">
+                    <input  [(ngModel)]="this.kw" placeholder="e.g. Clio" class="rounded-full w-full h-16 bg-transparent py-2 pl-8 pr-32 outline-none border-2 border-gray-100 shadow-md hover:outline-none focus:ring-indigo-600 focus:border-indigo-600" type="text" name="query" id="query">
+                    <button 
+                        (click)="handleSearch()" type="submit" class="absolute inline-flex items-center h-10 px-4 py-2 text-sm text-white transition duration-150 ease-in-out rounded-full outline-none right-3 top-3 bg-indigo-600 sm:px-6 sm:text-base sm:font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-800">
+                      <svg class="-ml-0.5 sm:-ml-1 mr-2 w-4 h-4 sm:h-5 sm:w-5 indigo-600 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                      </svg>
+                      Search
+                    </button>
+                  </div>
             </div>
         </div>
         <svg class="my-7 w-full" xmlns="http://www.w3.org/2000/svg" width="1216" height="2" viewBox="0 0 1216 2"
@@ -51,91 +46,39 @@
                             RESET</p>
                     </div>
 
-
-                    <div class="w-full mb-7">
-                        <div class='accordion-group grid grid-cols-1 gap-5 sm:gap-9'
-                            data-accordion="default-accordion">
-                            <div class='accordion '
-                                id='category-heading-one'>
-                                <button
-                                    class='accordion-toggle group accordion-active:text-indigo-600 inline-flex items-center justify-between leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 active:text-indigo-600'
-                                    aria-controls='category-collapse-one'>
-                                    <h5 class="font-medium text-sm text-gray-900">
-                                        Availability
-                                    </h5>
-                                    <svg class='text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180'
-                                        width='22' height='22' viewBox='0 0 22 22' fill='none'
-                                        xmlns='http://www.w3.org/2000/svg'>
-                                        <path
-                                            d='M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25'
-                                            stroke='currentColor' stroke-width='1.6' stroke-linecap='round'
-                                            stroke-linejoin='round'></path>
-                                    </svg>
-
-                                </button>
-                                <div id='category-collapse-one'
-                                    class='accordion-content w-full px-0 overflow-hidden pr-4 max-h-0 '
-                                    aria-labelledby='category-heading-one'>
-                                    
-                                    <div class="box flex flex-col gap-2 mt-5">
-                                       
-                                        <div class="flex items-center mb-2">
-                                            <input id="checkbox-option-1" type="checkbox" value="" class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-100 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-100 checked:bg-indigo-600 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                            <label for="checkbox-option-1" class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-1</label>
-                                            </div>
-                                            <div class="flex items-center mb-2">
-                                                <input id="checkbox-option-2" type="checkbox" value="" class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-100 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-600 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                                <label for="checkbox-option-2" class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-2</label>
-                                                </div>
-                                                <div class="flex items-center mb-2">
-                                                    <input id="checkbox-option-3" type="checkbox" value="" class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-600 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-600 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                                    <label for="checkbox-option-3" class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-3</label>
-                                                    </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                    <label for="Offer" class="font-medium m-5 text-sm leading-6 text-gray-600 mb-1">Brands</label>
+                    <div class="box flex m-3 flex-col gap-2">
+                        <div *ngFor="let brand of brands" class="flex items-center">
+                            <input (click)="HandleBrandFilter(brand.id)" name="color" type="radio"
+                            class="before:content[''] peer  appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]"
+                            id="gray" />
+                          <span
+                            class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            
+                          </span>
+                            <label for="checkbox-default-1"  class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">{{brand.brandName}}</label>
                         </div>
                     </div>
-
-                    <label for="Offer" class="font-medium text-sm leading-6 text-gray-600 mb-1">Offer</label>
-                    <div class="relative w-full mb-7">
-                        <select id="Offer"
-                            class="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white">
-                            <option selected>5% off upi discount</option>
-                            <option value="option 1">option 1</option>
-                            <option value="option 2">option 2</option>
-                            <option value="option 3">option 3</option>
-                            <option value="option 4">option 4</option>
-                        </select>
-                        <svg class="absolute top-1/2 -translate-y-1/2 right-4 z-50" width="16" height="16"
-                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.0002 5.99845L8.00008 9.99862L3.99756 5.99609" stroke="#111827"
-                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <p class="font-medium text-sm leading-6 text-black mb-3">Discount</p>
-                    <div class="box flex flex-col gap-2">
-                        <div class="flex items-center">
-                            <input id="checkbox-default-1" type="checkbox" value="" class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                            <label for="checkbox-default-1" class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">20% or more</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="checkbox-default-2" type="checkbox" value="" class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                            <label for="checkbox-default-2" class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">30% or more</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="checkbox-default-3" type="checkbox" value="" class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                            <label for="checkbox-default-3" class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">50% or more</label>
+                    <p class="font-medium m-5 text-sm leading-6 text-black">Body Type</p>
+                    <div class="box m-3 flex flex-col gap-2">
+                        <div *ngFor="let body of bodyType" class="flex items-center">
+                            <input (click)="HandleBodyFilter(body)" name="color" type="radio"
+                            class="before:content[''] peer  appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]"
+                            id="gray" />
+                          <span
+                            class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            
+                          </span>
+                            <label for="checkbox-default-1"  class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">{{body}}</label>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-span-12 md:col-span-9">
-                <section class="py-10">
+                <section class="py-10 h-full">
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <a  *ngFor="let car of this.cars" (click)="HandleGetSingleCar(car.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
+                            <a  *ngFor="let car of this.appstate.CarsState.carsList" (click)="HandleGetSingleCar(car.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
                                 <div class="">
                                     <img src="https://content.avito.ma/classifieds/images/10118808687?t=full_hd" alt="face cream image" class="w-full object-cover">
                                 </div>
@@ -150,6 +93,31 @@
                         </div>
                     </div>
                 </section>
+                <div class="flex justify-end">
+                    <nav class="relative z-0 inline-flex flex-wrap -space-x-px rounded-md shadow-md">
+                        <a href="#" class="relative inline-flex items-center rounded-l-md p-2 text-sm text-gray-500 hover:bg-gray-200">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <div *ngFor="let page of [].constructor(this.appstate.CarsState.totalPages); 
+                        let i=index">
+                            <a  (click)="HandlePagination(i)" class="relative inline-flex items-center text-sm text-gray-500 p-2 md:px-3 md:py-2 hover:bg-gray-200">{{i+1}}</a>
+                        </div>
+                        <a href="" class="relative inline-flex items-center rounded-r-md p-2 text-sm text-gray-500 hover:bg-gray-200 ">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </nav>
+                
+                </div>
             </div>
         </div>
 

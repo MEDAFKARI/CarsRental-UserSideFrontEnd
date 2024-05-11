@@ -17,6 +17,7 @@ import { CarOverviewComponent } from './modules/home/car-overview/car-overview.c
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreOverviewComponent } from './modules/home/store-overview/store-overview.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { StoreOverviewComponent } from './modules/home/store-overview/store-over
     AppRoutingModule,
     RouterOutlet,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -40,6 +40,7 @@ export class CarOverviewComponent implements OnInit {
 
   HandleStorePage(storeId: number) {
     this.router.navigateByUrl(`/store/${storeId}`);
+    console.log(storeId);
   }
 
 
