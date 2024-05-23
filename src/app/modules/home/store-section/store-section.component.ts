@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CityService } from 'src/app/core/services/CityService/city.service';
 import { StoreService } from 'src/app/core/services/StoreService/store.service';
 
@@ -10,7 +11,8 @@ import { StoreService } from 'src/app/core/services/StoreService/store.service';
 export class StoreSectionComponent implements OnInit {
 
   constructor(private storeService:StoreService,
-      private cityService:CityService
+      private cityService:CityService,
+      private router:Router
   ){}
  
   stores:any =[]
@@ -52,7 +54,7 @@ throw new Error('Method not implemented.');
 }
 
 HandleGetStore(storeId: number) {
-  console.log(storeId);
+  this.router.navigateByUrl(`/store/${storeId}`);
 }
 
 HandleCityFilter(cityId:number) {

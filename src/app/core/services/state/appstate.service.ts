@@ -33,7 +33,6 @@ export class AppstateService {
   }
 
   AuthState:any={
-    user: true,
     isAuthenticated:false,
   }
 
