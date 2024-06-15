@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BrandService } from 'src/app/core/services/BrandService/brand.service';
 import { CarService } from 'src/app/core/services/CarsService/car.service';
 import { AppstateService } from 'src/app/core/services/state/appstate.service';
@@ -21,7 +22,8 @@ export class NewCarComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
     private carService:CarService,
-    private brandService:BrandService
+    private brandService:BrandService,
+    private router:Router
   ){
 
   }
@@ -65,6 +67,7 @@ HandleAddCar() {
     this.carService.AddCar(this.CarForm, this.attachment).subscribe({
         next:data=>{
           console.log(data);
+          this.router.navigateByUrl(`/dashboard/cars`)
         },
         error:err=>{
           console.log(err);

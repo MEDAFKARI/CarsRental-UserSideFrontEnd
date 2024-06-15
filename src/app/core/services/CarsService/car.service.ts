@@ -13,6 +13,7 @@ const URL = `${environment.API_URL}/cars`
   providedIn: 'root'
 })
 export class CarService {
+  
 
   constructor(private http:HttpClient,
     private appstate:AppstateService
@@ -63,5 +64,13 @@ export class CarService {
     return this.http.put(`${URL}/updateAvailability?id=${carId}`,{});
   }
 
+  updateCar(carId:number,car:any):Observable<any>{
+    return this.http.put(`${URL}/update/${carId}`,car);
+  }
+
+
+  deleteCarById(carId: any):Observable<any> {
+    return this.http.delete(`/delete/${carId}`);
+  }
 
 }

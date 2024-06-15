@@ -59,7 +59,7 @@
                             <label for="checkbox-default-1"  class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">{{brand.brandName}}</label>
                         </div>
                     </div>
-                    <p class="font-medium m-5 text-sm leading-6 text-black">Body Type</p>
+                    <label for="Offer" class="font-medium m-5 text-sm leading-6 text-gray-600 mb-1">Body Type</label>
                     <div class="box m-3 flex flex-col gap-2">
                         <div *ngFor="let body of bodyType" class="flex items-center">
                             <input (click)="HandleBodyFilter(body)" name="color" type="radio"
@@ -78,9 +78,9 @@
                 <section class="py-10 h-full">
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <a  *ngFor="let car of this.appstate.CarsState.carsList" (click)="HandleGetSingleCar(car.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
+                            <a *ngFor="let car of this.appstate.CarsState.carsList" (click)="HandleGetSingleCar(car.id)" class="mx-auto sm:mr-0 w-60 h-90 group cursor-pointer lg:mx-auto bg-white transition-all duration-500 mt-3">
                                 <div class="">
-                                    <img src="{{car.carImage}}" alt="face cream image" class="w-full object-cover">
+                                    <img src="{{car.carImage}}" alt="Car Image" class="w-60 h-60 object-cover">
                                 </div>
                                 <div class="mt-5">
                                     <div class="flex items-center justify-between">

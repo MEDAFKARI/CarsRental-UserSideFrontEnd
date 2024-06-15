@@ -1,89 +1,72 @@
 <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 m-6">
-    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-      <div class="text-gray-600">
-        <p class="font-medium text-lg">Car Details</p>
-        <p>Please fill out all the fields.</p>
+  <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+      <div class="text-gray-600 lg:col-span-3">
+          <p class="font-medium text-lg">Car Details</p>
+          <p>Please fill out all the fields.</p>
       </div>
-      <form >
-        <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-          <div class="md:col-span-5">
-            <label for="full_name">Car Model</label>
-            <input formControlName="carModel" type="text" name="carModel" id="car" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
-          </div>
-          <div class="md:col-span-5">
-            <label for="brand">Brand</label>
-            <select formControlName="brand" name="brandId" id="brand" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-              <option value="" >Select a Brand</option>
-              <option></option>
-            </select>
-          </div>
-          
-          <div class="md:col-span-5">
-            <label for="price">Price</label>
-            <input formControlName="price" type="number" name="price" id="price" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="" />
-          </div>
 
-          <div class="md:col-span-5">
-            <label for="car_body">Car Body</label>
-            <select formControlName="body" name="car_body" id="car_body" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-                <option value="">Select Car Body</option>
-                <option value="SEDAN">Sedan</option>
-                <option value="COUPE">Coupe</option>
-                <option value="HATCHBACK">Hatchback</option>
-                <option value="SUV">SUV</option>
-            </select>
-        </div>
+      <div class="lg:col-span-2">
+          <form [formGroup]="this.carFormGroup" (submit)="HandleUpdateCar()">
+              <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                  <div class="md:col-span-5">
+                      <label for="carModel">Car Model</label>
+                      <input formControlName="carModel" type="text" name="carModel" id="carModel" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" />
+                  </div>
 
-        <div class="md:col-span-5">
-            <label for="doors_number">Doors Number</label>
-            <select formControlName="doors" name="doors_number" id="doors_number" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-                <option value="">Select Doors Number</option>
-                <option value="2">2</option>
-                <option value="4">4</option>
-            </select>
-        </div>
+                  <div class="md:col-span-5">
+                      <label for="price">Price</label>
+                      <input formControlName="price" type="number" name="price" id="price" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="" />
+                  </div>
 
-        <div class="md:col-span-5">
-            <label for="fuel_type">Fuel Type</label>
-            <select formControlName="fuel" name="fuel_type" id="fuel_type" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-                <option value="">Select Fuel Type</option>
-                <option value="GASOLINE">GASOLINE</option>
-                <option value="DIESEL">DIESEL</option>
-            </select>
-        </div>
+                  <div class="md:col-span-5">
+                      <label for="car_body">Car Body</label>
+                      <select formControlName="body" name="car_body" id="car_body" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                          <option value="">Select Car Body</option>
+                          <option value="SEDAN">Sedan</option>
+                          <option value="COUPE">Coupe</option>
+                          <option value="HATCHBACK">Hatchback</option>
+                          <option value="SUV">SUV</option>
+                      </select>
+                  </div>
 
-        <div class="md:col-span-5">
-            <label for="transmission_type">Transmission Type</label>
-            <select formControlName="transmission" name="transmission_type" id="transmission_type" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-                <option value="">Select Transmission Type</option>
-                <option value="MANUAL">MANUAL</option>
-                <option value="AUTOMATIQUE">AUTOMATIQUE</option>
-            </select>
-        </div>
+                  <div class="md:col-span-5">
+                      <label for="doors_number">Doors Number</label>
+                      <select formControlName="doors" name="doors_number" id="doors_number" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                          <option value="">Select Doors Number</option>
+                          <option value="2">2</option>
+                          <option value="4">4</option>
+                      </select>
+                  </div>
 
-    
-          
-        <div class="md:col-span-5">
-            <label for="availability">Available</label>
-            <div class="flex items-center space-x-2">
-                <input formControlName="availability" type="radio" id="available" name="availability" value="true" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                <label for="available" class="text-sm font-medium text-gray-900">Yes</label>
-                <input formControlName="availability" type="radio" id="unavailable" name="availability" value="false" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                <label for="unavailable" class="text-sm font-medium text-gray-900">No</label>
-            </div>
-        </div>
-        
-     
-          <div class="md:col-span-5 text-right">
-            <div class="inline-flex items-end">
-              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-            </div>
-          </div>
+                  <div class="md:col-span-5">
+                      <label for="fuel_type">Fuel Type</label>
+                      <select formControlName="fuel" name="fuel_type" id="fuel_type" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                          <option value="">Select Fuel Type</option>
+                          <option value="GASOLINE">Gasoline</option>
+                          <option value="DIESEL">Diesel</option>
+                      </select>
+                  </div>
 
-        
-        </div>
+                  <div class="md:col-span-5">
+                      <label for="transmission_type">Transmission Type</label>
+                      <select formControlName="transmission" name="transmission_type" id="transmission_type" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                          <option value="">Select Transmission Type</option>
+                          <option value="MANUAL">Manual</option>
+                          <option value="AUTOMATIQUE">Automatic</option>
+                      </select>
+                  </div>
 
-        
-    </form>
-    </div>
+                  <div class="md:col-span-5 text-right">
+                      <div class="inline-flex items-end">
+                          <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+
+      <div class="lg:col-span-1 flex justify-center items-center">
+          <img src="{{car.carImage}}" class="w-full h-auto object-cover rounded-lg shadow-md" />
+      </div>
   </div>
+</div>

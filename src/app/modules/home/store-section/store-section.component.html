@@ -68,7 +68,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
                             <a  *ngFor="let store of stores" (click)="HandleGetStore(store.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
                                 <div class="">
-                                    <img src="https://i.pinimg.com/originals/51/2f/ee/512fee76586dc7070009826f55207dbe.jpg" alt="Store Logo" class="w-full object-cover">
+                                    <img src="{{store.storeLogo}}" alt="Store Logo" class="w-full object-cover">
                                 </div>
                                 <div class="mt-5">
                                     <div class="flex items-center justify-between">

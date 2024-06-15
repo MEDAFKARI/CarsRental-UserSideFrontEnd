@@ -15,7 +15,7 @@ import { HomeCarsSecComponent } from './modules/home/home-cars-sec/home-cars-sec
 import { StoreSectionComponent } from './modules/home/store-section/store-section.component';
 import { CarOverviewComponent } from './modules/home/car-overview/car-overview.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { StoreOverviewComponent } from './modules/home/store-overview/store-overview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './modules/storeOwner/dashboard/dashboard.component';
@@ -26,6 +26,7 @@ import { NewCarComponent } from './modules/storeOwner/new-car/new-car.component'
 import { RegisterStoreOwnerComponent } from './modules/auth/components/register-store-owner/register-store-owner.component';
 import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.component';
 import { UpdateStoreComponent } from './modules/storeOwner/update-store/update-store.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { UpdateStoreComponent } from './modules/storeOwner/update-store/update-s
     ReactiveFormsModule,
     FormsModule   
   ],
-  providers: [],
+  providers: [    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

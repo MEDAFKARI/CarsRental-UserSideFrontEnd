@@ -40,8 +40,28 @@ export class CarsListComponent implements OnInit{
   }
 
   HandleUpdateAvailability(carId: any) {
-    this.carService.updateCarAvailability(carId);
-    this.loadCarsByUser();
+    this.carService.updateCarAvailability(carId).subscribe({
+      next:data=>{
+        console.log(data);
+        this.loadCarsByUser();
+    },
+    error:err=>{
+        console.log(err);
+    }
+    });
+  }
+
+
+  HandleDeleteCar(carId: any) {
+    this.carService.deleteCarById(carId).subscribe({
+      next:data=>{
+        console.log(data);
+        this.loadCarsByUser();
+    },
+    error:err=>{
+        console.log(err);
+    }
+    });
   }
 
 

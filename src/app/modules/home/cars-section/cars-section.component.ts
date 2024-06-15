@@ -59,8 +59,8 @@ export class CarsSectionComponent implements OnInit {
     })
   }
 
-  HandleBrandFilter(brandId: any) {
-    this.carSrvc.getCarsByBrand(brandId, this.appstate.CarsState.currentPage).subscribe({
+  HandleBrandFilter(brandId: any,currentPage:number=0) {
+    this.carSrvc.getCarsByBrand(brandId, currentPage).subscribe({
       next: (data) => {
         console.log(data);
         this.appstate.setCarState({
@@ -71,7 +71,8 @@ export class CarsSectionComponent implements OnInit {
           pageSize: data.size,
           carsList: data.content,
           status: "LOADED",
-          brandId:brandId
+          brandId:brandId,
+          bodyType:''
         });
         console.log(this.appstate);
       },
@@ -89,8 +90,8 @@ export class CarsSectionComponent implements OnInit {
     this.router.navigateByUrl(`/car/${carId}`);
   }
 
-  HandleBodyFilter(bodyType: string) {
-    this.carSrvc.getCarsByBody(bodyType, this.appstate.CarsState.currentPage).subscribe({
+  HandleBodyFilter(bodyType: string,currentPage:number=0) {
+    this.carSrvc.getCarsByBody(bodyType, currentPage).subscribe({
       next: (data) => {
         this.appstate.setCarState({
           totalPages: data.totalPages,
@@ -100,6 +101,7 @@ export class CarsSectionComponent implements OnInit {
           pageSize: data.size,
           carsList: data.content,
           status: "LOADED",
+          brandId:'',
           bodyType: bodyType,
         });
         console.log(this.appstate);
@@ -122,12 +124,12 @@ export class CarsSectionComponent implements OnInit {
     if(this.appstate.CarsState.bodyType !='' && this.appstate.CarsState.brandId==''){
       console.log("Body Filter");
 
-      this.HandleBodyFilter(this.appstate.CarsState.bodyType);
+      this.HandleBodyFilter(this.appstate.CarsState.bodyType, this.appstate.CarsState.currentPage);
     }
     if(this.appstate.CarsState.bodyType =='' && this.appstate.CarsState.brandId!=''){
       console.log("Brand Filter");
 
-      this.HandleBrandFilter(this.appstate.CarsState.brandId);
+      this.HandleBrandFilter(this.appstate.CarsState.brandId, this.appstate.CarsState.currentPage);
     }
   }
 
