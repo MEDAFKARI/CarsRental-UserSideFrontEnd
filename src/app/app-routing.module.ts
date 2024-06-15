@@ -9,6 +9,13 @@ import { CarsSectionComponent } from './modules/home/cars-section/cars-section.c
 import { StoreSectionComponent } from './modules/home/store-section/store-section.component';
 import { CarOverviewComponent } from './modules/home/car-overview/car-overview.component';
 import { StoreOverviewComponent } from './modules/home/store-overview/store-overview.component';
+import { DashboardComponent } from './modules/storeOwner/dashboard/dashboard.component';
+import { CarsListComponent } from './modules/storeOwner/cars-list/cars-list.component';
+import { DashboardContentComponent } from './modules/storeOwner/dashboard-content/dashboard-content.component';
+import { NewCarComponent } from './modules/storeOwner/new-car/new-car.component';
+import { RegisterStoreOwnerComponent } from './modules/auth/components/register-store-owner/register-store-owner.component';
+import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.component';
+import { AuthorizationGuard } from './core/guards/authorization.guard';
 
 export const routes: Routes = [
 
@@ -21,8 +28,24 @@ export const routes: Routes = [
     {path:"car/:id", component:CarOverviewComponent},
     {path:"store/:id", component:StoreOverviewComponent}
   ]},
+
+
+  {path:"dashboard", canActivate:[AuthorizationGuard] ,component:DashboardComponent, children:[
+    {path:"", component:DashboardContentComponent},
+    {path:"cars", component:CarsListComponent},
+    {path:"new-car", component:NewCarComponent},
+    {path:"update-car/:id", component:UpdateCarComponent},
+    {path:"car/:id", component:CarOverviewComponent},
+    {path:"store/:id", component:StoreOverviewComponent}
+  ]},
+
+
+
+
   {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent}
+  {path:"register", component:RegisterComponent},
+  {path:"StoreOwnerRegister", component:RegisterStoreOwnerComponent}
+
 ]
 
 @NgModule({

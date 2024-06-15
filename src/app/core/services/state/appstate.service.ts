@@ -14,6 +14,8 @@ export class AppstateService {
     keyword: "",
     carsList:[],
     status:"LOADING",
+    brandId: '',
+    bodyType:'',
   }
 
 
@@ -33,6 +35,8 @@ export class AppstateService {
   }
 
   AuthState:any={
+    userId:'',
+    role:'',
     isAuthenticated:false,
   }
 

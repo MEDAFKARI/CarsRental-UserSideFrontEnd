@@ -28,6 +28,7 @@ export class StoreSectionComponent implements OnInit {
         next:data=>{
           console.log(data);
           this.stores=data.content;
+          console.log(this.stores)
         },
         error:err=>{
           console.log(err);

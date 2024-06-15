@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppstateService } from 'src/app/core/services/state/appstate.service';
 
 @Component({
@@ -6,10 +7,16 @@ import { AppstateService } from 'src/app/core/services/state/appstate.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   isHidden=true;
 
-  constructor(public appstate:AppstateService){}
+  constructor(public appstate:AppstateService,
+        private router:Router
+  ){}
+
+  ngOnInit(): void {
+    console.log(this.appstate.AuthState);
+  }
 
   public navLinks=[
     {path:'home', name:'Home'},
@@ -24,5 +31,16 @@ export class NavbarComponent {
   handleHiddenTrue() {
     this.isHidden = true;
    }
+
+
+   HandleLogout() {
+    localStorage.clear();
+    this.appstate.setAuthState({
+      userId:'',
+      role:'',
+      isAuthenticated:false
+    })
+    this.router.navigateByUrl(`/`);
+    }
 
 }

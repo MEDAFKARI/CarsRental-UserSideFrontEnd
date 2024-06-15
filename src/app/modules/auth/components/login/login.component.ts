@@ -30,7 +30,10 @@ export class LoginComponent implements OnInit{
     this.authService.login(this.loginGroup.value).subscribe({
       next:data=>{
         console.log(data);
-        this.authService.setToken(data.accessToken);
+        this.authService.setToken(data.accessToken, data.role);
+        if(data.role=='STORE_OWNER'){
+         
+        }
         this.router.navigateByUrl(`/`);
       },
       error:err=>{

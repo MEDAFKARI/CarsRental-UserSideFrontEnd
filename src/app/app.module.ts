@@ -18,6 +18,14 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreOverviewComponent } from './modules/home/store-overview/store-overview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './modules/storeOwner/dashboard/dashboard.component';
+import { SidebarComponent } from './modules/storeOwner/sidebar/sidebar.component';
+import { CarsListComponent } from './modules/storeOwner/cars-list/cars-list.component';
+import { DashboardContentComponent } from './modules/storeOwner/dashboard-content/dashboard-content.component';
+import { NewCarComponent } from './modules/storeOwner/new-car/new-car.component';
+import { RegisterStoreOwnerComponent } from './modules/auth/components/register-store-owner/register-store-owner.component';
+import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.component';
+import { UpdateStoreComponent } from './modules/storeOwner/update-store/update-store.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +40,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     StoreSectionComponent,
     CarOverviewComponent,
     FooterComponent,
-    StoreOverviewComponent
+    StoreOverviewComponent,
+    DashboardComponent,
+    SidebarComponent,
+    CarsListComponent,
+    DashboardContentComponent,
+    NewCarComponent,
+    RegisterStoreOwnerComponent,
+    UpdateCarComponent,
+    UpdateStoreComponent,
   ],
   imports: [
     BrowserModule,

@@ -65,21 +65,21 @@
             <div class="col-span-12 md:col-span-9">
                 <section class="py-10 h-full">
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
                             <a  *ngFor="let store of stores" (click)="HandleGetStore(store.id)"  class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
                                 <div class="">
-                                    <img src="https://content.avito.ma/classifieds/images/10118808687?t=full_hd" alt="face cream image" class="w-full object-cover">
+                                    <img src="https://i.pinimg.com/originals/51/2f/ee/512fee76586dc7070009826f55207dbe.jpg" alt="Store Logo" class="w-full object-cover">
                                 </div>
                                 <div class="mt-5">
                                     <div class="flex items-center justify-between">
-                                        <h6 class="font-semibold text-xl leading-8 text-black transition-all duration-500 group-hover:text-indigo-600">{{store.storeName}}</h6>
+                                        <p class="font-semibold text-xl leading-8 text-black transition-all duration-500 group-hover:text-indigo-600">{{store.storeName}}</p>
                                         <div class="font-semibold text-xl leading-8 text-indigo-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                                               </svg>
                                         </div>
                                     </div>
-                                    <p class="mt-2 font-normal text-sm leading-6 text-gray-500">{{store.city.cityName}}</p>
+                                    <p *ngIf="store.city" class="mt-3 font-normal text-sm leading-6 text-gray-500">{{store.city.cityName}}</p>
                                 </div>
                             </a>
                         </div>
