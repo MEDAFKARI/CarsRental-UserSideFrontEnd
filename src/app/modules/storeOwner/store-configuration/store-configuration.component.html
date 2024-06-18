@@ -1,0 +1,99 @@
+<div class="relative flex flex-wrap items-center m-5 justify-between bg-white group shrink-0">
+  <div class="flex align-items-center">
+      <img src="\assets\images\Logo\Logo3.png" alt="" style="width: 200px; height: auto;">
+  </div>
+
+  <div>
+    <div class="flex -space-x-2  overflow-hidden" *ngIf="this.appstate.AuthState.isAuthenticated">
+      <div class="flex items-center space-between">
+        <div class="flex items-center ml-10">
+          <span class="m-4">Welcome {{ this.appstate.AuthState.userId }}!</span>
+        <div  class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">    
+      </div>   
+      </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+<div class="p-6 flex items-center justify-center">
+    <div class="container  mx-auto">
+      <div>
+        <h2 class="font-semibold text-xl text-gray-600">Continue Store Configuration</h2>  
+        <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+            <div class="text-gray-600">
+              <p class="font-medium text-lg">Store Details</p>
+              <p>Please fill out all the fields.</p>
+            </div>
+            <form [formGroup]="this.storeConfiguration" class="lg:col-span-2" (submit)="HandleConfigureStore()">
+
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                  <div class="md:col-span-5">
+                    <label for="full_name">Store Name</label>
+                    <input type="text" formControlName="storeName" name="storeName" id="storeName" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="Exemple's Store" />
+                  </div>
+    
+                  <div class="md:col-span-5">
+                    <label for="email">Store Number</label>
+                    <input type="text" formControlName="storeNumber" name="storeNumber" id="storeNumber" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="+212 6000000" />
+                  </div>
+    
+                  <div class="md:col-span-2">
+                    <label for="city">City</label>
+                    <select formControlName="city" name="cityId" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                      <option value="" >Select City</option>
+                      <option *ngFor="let city of cityList" [value]="city.id">{{ city.cityName }}</option>
+                    </select>                  </div>
+
+                  <div class="md:col-span-5">
+                    <label for="message" class="formbold-form-label"> Drage The Car Picture</label>
+          
+                    <div class="flex items-center justify-center w-full" *ngIf="this.attachment==undefined">
+                      <label for="dropzone-file"
+                        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                          <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                          </svg>
+                          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
+                              upload</span> or drag and drop</p>
+                          <p class="text-xs text-gray-500 dark:text-gray-400"> PNG, JPG or PDF (MAX. 800x400px)</p>
+                        </div>
+                        <input id="dropzone-file" (change)="onFileSelected($event)" type="file" class="hidden" />
+                      </label>
+                    </div>
+                    <div class="flex items-center justify-between w-full" *ngIf="this.attachment!=undefined">
+                      <div>
+                        Your uploaded file <br>
+                        <i class="fa fa-file size-10 m-5" aria-hidden="true"></i> {{this.attachment.name}}
+                      </div>
+                      <button (click)="this.attachment=undefined" class="">Remove</button>
+                    </div>
+          
+                  </div>
+                
+          
+                  <div class="md:col-span-5 text-right">
+                    <div class="inline-flex items-end">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Validate Configuration</button>
+                    </div>
+                  </div>
+    
+                </div>
+            </form>
+
+            
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  

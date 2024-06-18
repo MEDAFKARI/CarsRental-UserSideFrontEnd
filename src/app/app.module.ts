@@ -27,6 +27,7 @@ import { RegisterStoreOwnerComponent } from './modules/auth/components/register-
 import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.component';
 import { UpdateStoreComponent } from './modules/storeOwner/update-store/update-store.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { StoreConfigurationComponent } from './modules/storeOwner/store-configuration/store-configuration.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     RegisterStoreOwnerComponent,
     UpdateCarComponent,
     UpdateStoreComponent,
+    StoreConfigurationComponent,
   ],
   imports: [
     BrowserModule,

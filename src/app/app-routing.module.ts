@@ -16,6 +16,8 @@ import { NewCarComponent } from './modules/storeOwner/new-car/new-car.component'
 import { RegisterStoreOwnerComponent } from './modules/auth/components/register-store-owner/register-store-owner.component';
 import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.component';
 import { AuthorizationGuard } from './core/guards/authorization.guard';
+import { AuthenticatedGuard } from './core/guards/authenticated.guard';
+import { StoreConfigurationComponent } from './modules/storeOwner/store-configuration/store-configuration.component';
 
 export const routes: Routes = [
 
@@ -42,9 +44,10 @@ export const routes: Routes = [
 
 
 
-  {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent},
-  {path:"StoreOwnerRegister", component:RegisterStoreOwnerComponent}
+  {path:"login", canActivate:[AuthenticatedGuard], component:LoginComponent},
+  {path:"register", canActivate:[AuthenticatedGuard], component:RegisterComponent},
+  {path:"StoreOwnerRegister", canActivate:[AuthenticatedGuard], component:RegisterStoreOwnerComponent},
+  {path:"configuration/:id", component:StoreConfigurationComponent}
 
 ]
 

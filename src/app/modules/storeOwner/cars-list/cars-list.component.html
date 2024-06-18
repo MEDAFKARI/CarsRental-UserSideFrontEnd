@@ -28,7 +28,7 @@
                     <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                       <div class="flex px-2 py-1">
                         <div>
-                          <img src="{{car.carImage}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
+                          <img src="{{car.carImage}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-30 w-30 rounded-xl" alt="user1" />
                         </div>
                         <div class="flex flex-col justify-center">
                           <h6 class="mb-0 text-sm leading-normal dark:text-white">{{car.carModel}}</h6>
@@ -59,10 +59,10 @@
                       <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{car.price}}</span>
                     </td>
                     <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                        <a (click)="HandleUpdateAvailability(car.id)" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> unavailable/available </a>
+                        <button (click)="HandleUpdateAvailability(car.id)" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> unavailable/available </button >
                       </td>
                     <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <a (click)="HandleUpdateCar(car.id)" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                      <button (click)="HandleUpdateCar(car.id)" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </button>
                     </td>
                     <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                         <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Delete </a>

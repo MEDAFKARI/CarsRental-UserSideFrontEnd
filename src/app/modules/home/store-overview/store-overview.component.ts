@@ -28,9 +28,6 @@ export class StoreOverviewComponent implements OnInit {
   }
 
 
-
-
-
   HandleGetSingleCar(arg: number) {
       this.rtr.navigateByUrl(`car/${arg}`)
   }
@@ -50,7 +47,7 @@ export class StoreOverviewComponent implements OnInit {
     this.carService.getCarsByStore(this.storeId).subscribe({
       next:data=>{
         this.cars= data.content;
-        console.log(this.cars);
+        console.log(this.cars); 
       },
       error:err=>{
         console.log(err);

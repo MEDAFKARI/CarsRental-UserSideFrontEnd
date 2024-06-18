@@ -30,20 +30,20 @@
         </div>
         
         </div>
-          <a
+          <button
           (click)="HandleLogout()"
           class="text-sm ml-10 font-semibold leading-6 text-gray-900"
         >
           Logout
-        </a>
+          </button>
         </div>
         
       </div>
     </div>
     
     <div *ngIf="this.appstate.AuthState.isAuthenticated==false" class="items-center hidden gap-8 md:flex">
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active"   class="flex items-center text-sm font-normal text-black">Log In</a>
-        <a  [routerLink]="['/register']" routerLinkActive="router-link-active"  class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</a> 
+        <button [routerLink]="['/login']" routerLinkActive="router-link-active"   class="flex items-center text-sm font-normal text-black">Log In</button>
+        <button  [routerLink]="['/register']" routerLinkActive="router-link-active"  class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</button> 
     </div>
     
 
