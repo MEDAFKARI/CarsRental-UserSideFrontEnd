@@ -28,6 +28,8 @@ import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.c
 import { UpdateStoreComponent } from './modules/storeOwner/update-store/update-store.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { StoreConfigurationComponent } from './modules/storeOwner/store-configuration/store-configuration.component';
+import { ProfileSettigsComponent } from './modules/home/profile-settigs/profile-settigs.component';
+import { StoreSettingsComponent } from './modules/storeOwner/store-settings/store-settings.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { StoreConfigurationComponent } from './modules/storeOwner/store-configur
     UpdateCarComponent,
     UpdateStoreComponent,
     StoreConfigurationComponent,
+    ProfileSettigsComponent,
+    StoreSettingsComponent,
   ],
   imports: [
     BrowserModule,

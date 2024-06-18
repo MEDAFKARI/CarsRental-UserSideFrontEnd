@@ -18,6 +18,8 @@ import { UpdateCarComponent } from './modules/storeOwner/update-car/update-car.c
 import { AuthorizationGuard } from './core/guards/authorization.guard';
 import { AuthenticatedGuard } from './core/guards/authenticated.guard';
 import { StoreConfigurationComponent } from './modules/storeOwner/store-configuration/store-configuration.component';
+import { ProfileSettigsComponent } from './modules/home/profile-settigs/profile-settigs.component';
+import { StoreSettingsComponent } from './modules/storeOwner/store-settings/store-settings.component';
 
 export const routes: Routes = [
 
@@ -25,6 +27,7 @@ export const routes: Routes = [
 
   {path:"", component:LayoutComponent, children:[
     {path:"home", component:AccueilComponent},
+    {path:"profile", component:ProfileSettigsComponent},
     {path:"cars", component:CarsSectionComponent},
     {path:"stores", component:StoreSectionComponent},
     {path:"car/:id", component:CarOverviewComponent},
@@ -38,7 +41,7 @@ export const routes: Routes = [
     {path:"new-car", component:NewCarComponent},
     {path:"update-car/:id", component:UpdateCarComponent},
     {path:"car/:id", component:CarOverviewComponent},
-    {path:"store/:id", component:StoreOverviewComponent}
+    {path:"StoreSettings", component:StoreSettingsComponent}
   ]},
 
 

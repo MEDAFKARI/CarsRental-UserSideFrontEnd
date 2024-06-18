@@ -41,8 +41,23 @@ export class StoreService {
     return this.http.put(`${API_URL}/update/${storeId}`,formData,{headers:headers});
   }
 
-  UpdateStore(){
 
+  updateStoreInfos(storeId:Number,storeConfiguration: FormGroup):Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('storeName', storeConfiguration.value.storeName);
+    formData.append('storeNumber', storeConfiguration.value.storeNumber);
+    formData.append('city', storeConfiguration.value.city);
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.put(`${API_URL}/updateStoreInfos/${storeId}`,formData,{headers:headers});
+  }
+
+  updateStoreLogo(storeId:Number, attachment:File){
+    const formData: FormData = new FormData();
+    formData.append('attachment', attachment);
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.put(`${API_URL}/updateStoreLogo/${storeId}`,formData,{headers:headers});
   }
 
 

@@ -42,32 +42,32 @@ export class AuthService {
     this.getUsernameFromToken();
   }
   
-    getToken(): string | null{
-        let token = localStorage.getItem( 'token' );
-        if( token !=null){
-            token = JSON.parse(token);
+      getToken(): string | null{
+          let token = localStorage.getItem( 'token' );
+          if( token !=null){
+              token = JSON.parse(token);
+        }
+        return token;
       }
-      return token;
+
+      getRole(): string | null{
+        let role = localStorage.getItem( 'role' );
+        console.log(role);
+        if( role !=null){
+            role = role;
+      }
+      return role;
     }
 
-    getRole(): string | null{
-      let role = localStorage.getItem( 'role' );
-      console.log(role);
-      if( role !=null){
-          role = role;
-    }
-    return role;
-  }
-
-    getUsernameFromToken() {
-      const token = this.getToken();
-      if (token) {
-          const decodedToken = jwtDecode(token); 
-          this.appstate.setAuthState({
-            userId:decodedToken.sub
-          }) 
-      } 
-    }
+      getUsernameFromToken() {
+        const token = this.getToken();
+        if (token) {
+            const decodedToken = jwtDecode(token); 
+            this.appstate.setAuthState({
+              userId:decodedToken.sub
+            }) 
+        } 
+      }
 
 
 

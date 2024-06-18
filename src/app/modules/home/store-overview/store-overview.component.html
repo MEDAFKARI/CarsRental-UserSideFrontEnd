@@ -12,7 +12,7 @@
         </div>    
       </div>    
       <div class="relative">      
-        <img src="{{store.storeLogo}}" class="w-50 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500"/>
+        <img src="{{store.storeLogo}}" class="object-cover w-40 h-40 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500"/>
       </div>    
       <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
         <button class="text-white py-3 px-6 uppercase rounded-lg bg-indigo-700 hover:bg-indigo-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
@@ -22,7 +22,8 @@
     </div>
     <div class="mt-20 text-center border-b pb-12">    
       <h1 class="text-4xl font-medium text-gray-700">{{store.storeName}}</h1>    
-      <p class="font-light text-gray-600 mt-3">{{store.city.cityName}}</p>   
+      <p class="font-light text-gray-600 mt-3">{{store.city.cityName}}</p> 
+      <p class="font-light text-gray-600 mt-3">Store Phone Number : {{store.storeNumber}}</p>  
     </div>  
     
     <div class="mt-12 flex flex-col justify-center">    
