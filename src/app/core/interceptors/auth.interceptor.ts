@@ -18,9 +18,12 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
-    if (request.url.includes('/signin') || request.url.includes('/signup')||
-     request.url.includes('/brands')
-     || request.url.includes('/cars/get')) {
+    if (request.url.includes('/signin') || request.url.includes('/signup')
+      || request.url.includes('/brands/get')
+      || request.url.includes('/cars/get')
+      || request.url.includes('/cities/get')
+      || request.url.includes('/stores/get')
+    ) {
       return next.handle(request);
     }
     

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppstateService } from './core/services/state/appstate.service';
 import { AuthService } from './core/services/Auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,30 @@ import { AuthService } from './core/services/Auth/auth.service';
 })
 export class AppComponent implements OnInit  {
   title = 'ClientFrontEnd';
-  constructor(private appstate:AppstateService,private authService:AuthService){}
+  constructor(private appstate:AppstateService,private authService:AuthService,
+              private router:Router
+  ){}
 
 
   ngOnInit(): void {
    try {
-    if(this.authService.getToken()){
+    let token = this.authService.getToken()
+    if(token && this.authService.isTokenExpired(token) ){
       this.authService.getUsernameFromToken();
       console.log(this.authService.getRole());
       this.appstate.setAuthState({
        role: this.authService.getRole(),
        isAuthenticated:true,
      });
+    }
+    else{
+      localStorage.clear();
+        this.appstate.setAuthState({
+          userId:'',
+          role:'',
+          isAuthenticated:false
+        })
+        this.router.navigateByUrl(`/`);
     }
           
     } catch (error) {

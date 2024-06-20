@@ -42,15 +42,15 @@ export class NavbarComponent implements OnInit, OnChanges {
    }
 
 
-   HandleLogout() {
-    localStorage.clear();
-    this.appstate.setAuthState({
-      userId:'',
-      role:'',
-      isAuthenticated:false
-    })
-    this.router.navigateByUrl(`/`);
-    }
+      HandleLogout() {
+        localStorage.clear();
+        this.appstate.setAuthState({
+          userId:'',
+          role:'',
+          isAuthenticated:false
+        })
+        this.router.navigateByUrl(`/`);
+        }
 
 
     LoadUserInformations(){

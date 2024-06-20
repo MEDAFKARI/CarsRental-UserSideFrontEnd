@@ -31,7 +31,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <a *ngFor="let car of this.cars" (click)="HandleGetSingleCar(car.id)" class="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500">
             <div class="">
-              <img src="{{car.carImage}}" alt="face cream image" class="w-full object-cover">
+              <img src="{{car.carImage}}" alt="face cream image" class="w-full h-60 object-cover">
             </div>
             <div class="mt-5">
               <div class="flex items-center justify-between">

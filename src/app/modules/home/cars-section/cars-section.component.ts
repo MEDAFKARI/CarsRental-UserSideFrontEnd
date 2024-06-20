@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarBody } from 'src/app/core/Models/CarBody';
 import { BrandService } from 'src/app/core/services/BrandService/brand.service';
@@ -26,6 +26,9 @@ export class CarsSectionComponent implements OnInit {
     this.getAllCars();
     this.getAllBrands();
   }
+
+
+  @ViewChildren('brandInput') brandInputs!: QueryList<any>;
 
   getAllCars(kw: string = "") {
     this.carSrvc.getCars(kw, this.appstate.CarsState.currentPage).subscribe({
@@ -131,6 +134,12 @@ export class CarsSectionComponent implements OnInit {
 
       this.HandleBrandFilter(this.appstate.CarsState.brandId, this.appstate.CarsState.currentPage);
     }
+  }
+
+
+  HandleReset() {
+    this.getAllCars();
+    this.brandInputs.forEach(input => input.nativeElement.checked = false);
   }
 
 }

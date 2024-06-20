@@ -70,6 +70,12 @@ export class AuthService {
       }
 
 
+      isTokenExpired(token: string) {
+        const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+        console.log(expiry * 1000)
+        return expiry * 1000 > Date.now();
+      }
+
 
 
 

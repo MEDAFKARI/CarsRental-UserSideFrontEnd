@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, OnSameUrlNavigation, Route, Router } from '@angular/router';
+import { AccountService } from 'src/app/core/services/AccountService/account.service';
 import { CityService } from 'src/app/core/services/CityService/city.service';
 import { StoreService } from 'src/app/core/services/StoreService/store.service';
 import { AppstateService } from 'src/app/core/services/state/appstate.service';
@@ -22,13 +23,16 @@ export class StoreConfigurationComponent implements OnInit {
 
   cityList:any=[]
 
+  userInformations!:any;
+
 
   constructor(private fb:FormBuilder,
     private storeService:StoreService,
     private cityService:CityService,
     private router:Router,
     private route:ActivatedRoute,
-    public appstate:AppstateService
+    public appstate:AppstateService,
+    private accountService:AccountService
   ){
 
   }
@@ -97,6 +101,19 @@ export class StoreConfigurationComponent implements OnInit {
       console.log("Invalid");
     }
   }
+
+
+  LoadUserInformations(){
+    this.accountService.getUserInformations(this.appstate.AuthState.userId).subscribe({
+        next:data=>{
+          console.log(data);
+            this.userInformations= data;
+        },
+        error:err=>{
+            console.log(err);
+        }
+    })
+}
 
 
 

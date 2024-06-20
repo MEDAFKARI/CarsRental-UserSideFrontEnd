@@ -41,7 +41,7 @@
                 <div class="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
                     <div class="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-7">
                         <p class="font-medium text-base leading-7 text-black ">Filter Plans</p>
-                        <p
+                        <p (click)="HandleReset()"
                             class="font-medium text-xs text-gray-500 cursor-pointer transition-all duration-500 hover:text-indigo-600">
                             RESET</p>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="box flex m-3 flex-col gap-2">
                         <div *ngFor="let brand of brands" class="flex items-center">
                             <input (click)="HandleBrandFilter(brand.id)" name="color" type="radio"
-                            class="before:content[''] peer  appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]"
+                            class="appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-700 hover:bg-indigo-100 "
                             id="gray" />
                           <span
                             class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
