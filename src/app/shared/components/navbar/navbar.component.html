@@ -9,23 +9,25 @@
     </div>
 
     <div>
-      <div class="flex -space-x-2  overflow-hidden" *ngIf="this.appstate.AuthState.isAuthenticated">
+      <div class="flex -space-x-2 overflow-hidden" *ngIf="this.appstate.AuthState.isAuthenticated">
         <div class="flex items-center space-between">
           <div class="flex items-center ml-10">
-            <span class="m-4">Welcome {{ this.appstate.AuthState.userId }}!</span>
-          <div [routerLink]="['/profile']" class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">    
-        </div>
-        
-        </div>
+            <span class="m-4">Welcome {{ this.userInformations.username }}!</span>
+            <div 
+              [routerLink]="['/profile']" 
+              class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center" 
+              [ngStyle]="{'background-image': 'url(' + this.userInformations.profilePicture + ')'}">
+            </div>
+          </div>
           <button
-          (click)="HandleLogout()"
-          class="text-sm ml-10 font-semibold leading-6 text-gray-900"
-        >
-          Logout
+            (click)="HandleLogout()"
+            class="text-sm ml-10 font-semibold leading-6 text-gray-900"
+          >
+            Logout
           </button>
         </div>
-        
       </div>
+      
     </div>
     
     <div *ngIf="this.appstate.AuthState.isAuthenticated==false" class="items-center hidden gap-8 md:flex">
